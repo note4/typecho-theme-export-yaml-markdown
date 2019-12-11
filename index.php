@@ -53,6 +53,12 @@
     $output .= '';
     echo $output;
 ?>
+<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+<?php while($pages->next()): ?>
+<?php $pages->permalink(); ?>
+<br />
+<?php endwhile; ?>
+
 </textarea> 
 
 <h2>分类列表</h2>
@@ -77,6 +83,27 @@ category_map:
 
 
 
+
+
+
+<h2>页面</h2>
+<p>替换_config.yml中内容</p>
+<p>
+数据验证
+<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+		    <?php while($pages->next()): ?>
+		        <li class="fl"><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" target="_blank" class="<?php if($this->is('page', $pages->slug)): ?>on<?php endif; ?>"><?php $pages->title(); ?></a>
+		    <?php endwhile; ?>
+</p>
+
+<textarea  name="editor_cat3">   
+category_map:
+<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+<?php while($pages->next()): ?>
+    <?php $pages->title(); ?>: <?php $pages->slug(); ?>
+
+<?php endwhile; ?>
+</textarea> 
 
 
 
