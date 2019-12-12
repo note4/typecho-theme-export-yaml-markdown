@@ -1,3 +1,6 @@
+
+<a href="<?php $this->options->siteUrl(); ?>" class="db">回到首页</a>
+
 <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
     $year=0; $mon=0; $i=0; $j=0;
     $output = '<div id="archives">';

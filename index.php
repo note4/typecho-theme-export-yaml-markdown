@@ -29,7 +29,8 @@
 
 
 <h2>文章列表</h2>
-<p>全选复制，新建txt，粘贴内容并保存</p>
+<p>全选复制，新建txt，粘贴内容并保存为`filelist.txt`</p>
+<p>使用命令下载所有内容：`wget -i filelist.txt`</p>
 <textarea  name="editor_post">   
     <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=999999999')->to($archives);
     $year=0; $mon=0; $i=0; $j=0;
@@ -63,6 +64,7 @@
 
 <h2>分类列表</h2>
 <p>替换_config.yml中内容</p>
+<P>使用多分类的文章请手动删除一个分类，不然hexo系统会自动识别成二级子分类</P>
 <p>
 数据验证
 <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
