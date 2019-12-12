@@ -99,10 +99,12 @@ category_map:
 </p>
 
 <textarea  name="editor_cat3">   
-category_map:
+menu:
+  Home: /
+  Archives: /archives
 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
 <?php while($pages->next()): ?>
-    <?php $pages->title(); ?>: <?php $pages->slug(); ?>
+  <?php $pages->title(); ?>: /<?php $pages->slug(); ?>
 
 <?php endwhile; ?>
 </textarea> 
@@ -122,16 +124,26 @@ tag_map:
 </textarea> 
 
 
+<h2>友情链接</h2>
+<p>手动格式化</p>
+<textarea  name="editor_links">
+<?php Links_Plugin::output(); ?>
+</textarea>
+
+
+
 
 <h2>url验证</h2>
 <p>替换_config.yml中的固定链接优化</p>
 <p  name="editor_url">  
-post:
-cat:
-tag:
+post: 
+cat: 
+tag: 
 
 
 </p> 
+
+
 
 
 
@@ -146,6 +158,7 @@ tag:
 <style>
 textarea[name|=editor_cat3],
 textarea[name|=editor_tag3],
+textarea[name|=editor_links],
 textarea[name|=editor_3]
 {
     width: 600px; height: 200px;
