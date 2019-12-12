@@ -91,10 +91,10 @@ category_map:
 <h2>页面</h2>
 <p>替换_config.yml中内容</p>
 <p>
-数据验证
+数据验证(名称及内置链接，cid)
 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
 		    <?php while($pages->next()): ?>
-		        <li class="fl"><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" target="_blank" class="<?php if($this->is('page', $pages->slug)): ?>on<?php endif; ?>"><?php $pages->title(); ?></a>
+		        <li class="fl"><a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" target="_blank" class="<?php if($this->is('page', $pages->slug)): ?>on<?php endif; ?>"><?php $pages->title(); ?></a><span style="margin-left: 1em; color: green; font-size: 8px;"><?php $pages->cid(); ?></span>
 		    <?php endwhile; ?>
 </p>
 
