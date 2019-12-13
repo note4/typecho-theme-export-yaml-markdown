@@ -77,7 +77,7 @@
 category_map:
 <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
 <?php while ($category->next()): ?>
-    <?php $category->name(); ?>: <?php $category->slug(); ?>
+    <?php $category->name(); ?>: “<?php $category->slug(); ?>”
 
 <?php endwhile; ?>
 </textarea> 
@@ -117,7 +117,7 @@ menu:
 tag_map:
 <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=999999999')->to($tags); ?><?php if($tags->have()): ?>
 <?php while ($tags->next()): ?>
-    <?php $tags->name(); ?>: <?php $tags->slug(); ?>
+    <?php $tags->name(); ?>: “<?php $tags->slug(); ?>”
 
 <?php endwhile; ?>
 <?php else: ?><?php _e('# 没有任何标签'); ?><?php endif; ?>
